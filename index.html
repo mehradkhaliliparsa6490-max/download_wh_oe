@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>در حال انتقال به دانلود...</title>
+    <style>
+        body { font-family: Tahoma, sans-serif; background: #f4f7f6; text-align: center; padding: 50px 20px; }
+        .card { background: white; max-width: 400px; margin: auto; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #333; font-size: 22px;}
+        .btn { display: inline-block; background: #2ecc71; color: white; padding: 15px 40px; font-size: 18px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 20px; }
+        .note { font-size: 13px; color: #777; margin-top: 25px; line-height: 1.6; text-align: right; background: #fff3cd; padding: 10px; border-radius: 8px;}
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>در حال دانلود اپلیکیشن...</h1>
+        <p>اگر دانلود به صورت خودکار شروع نشد، روی دکمه زیر بزنید:</p>
+        
+        <!-- دکمه دانلود با نام فایل شما -->
+        <a href="with_one.APK" id="downloadBtn" class="btn" download>دانلود دستی APK</a>
+        
+        <div class="note">
+            <strong>راهنمای نصب:</strong><br>
+            پس از دانلود، روی فایل کلیک کنید. اگر گوشی پیام «نصب از منابع ناشناس» داد، گزینه «اجازه دادن» یا «تنظیمات» را بزنید و اجازه نصب بدهید.
+        </div>
+    </div>
+
+    <script>
+        // کد جاوااسکریپت برای شروع دانلود خودکار
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('downloadBtn').click();
+            }, 500); // نیم ثانیه بعد از باز شدن سایت، دانلود رو استارت بزن
+        });
+    </script>
+</body>
+</html>
