@@ -3,36 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>در حال انتقال به دانلود...</title>
+    <title>دانلود اپلیکیشن</title>
+    <!-- فونت وزیرمتن برای زیبایی بیشتر -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    
     <style>
-        body { font-family: Tahoma, sans-serif; background: #f4f7f6; text-align: center; padding: 50px 20px; }
-        .card { background: white; max-width: 400px; margin: auto; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        h1 { color: #333; font-size: 22px;}
-        .btn { display: inline-block; background: #2ecc71; color: white; padding: 15px 40px; font-size: 18px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 20px; }
-        .note { font-size: 13px; color: #777; margin-top: 25px; line-height: 1.6; text-align: right; background: #fff3cd; padding: 10px; border-radius: 8px;}
+        /* ==========================================
+           تمام استایل‌های ارسالی شما در اینجا قرار گرفت
+           ========================================== */
+        :root{
+          --bg:#fdf7f1;
+          --bg-2:#f7ece2;
+          --card:#ffffff;
+          --ink:#2b2118;
+          --muted:#8a7a6b;
+          --brand:#e8730c;
+          --brand-2:#f5a524;
+          --green:#1f9d55;
+          --green-soft:#e6f6ed;
+          --red:#d94a3d;
+          --red-soft:#fdeceb;
+          --line:#f0e4d7;
+          --radius:18px;
+          --shadow:0 10px 30px rgba(90,60,30,.08);
+        }
+
+        *{ box-sizing:border-box; }
+
+        html,body{
+          margin:0;
+          padding:0;
+          background:
+            radial-gradient(1200px 600px at 100% -10%, #ffe9d2 0%, transparent 60%),
+            radial-gradient(900px 500px at -10% 10%, #ffeef0 0%, transparent 55%),
+            var(--bg);
+          color:var(--ink);
+          font-family:"Vazirmatn", Tahoma, "Segoe UI", sans-serif;
+          line-height:1.7;
+          min-height:100vh;
+        }
+
+        .app{
+          max-width:1080px;
+          margin:0 auto;
+          padding:28px 16px 60px;
+        }
+
+        /* ---------- Hero ---------- */
+        .hero{
+          text-align:center;
+          margin-bottom:26px;
+          margin-top: 40px;
+        }
+        .hero h1{
+          margin:0 0 8px;
+          font-size:clamp(1.8rem, 4vw, 2.7rem);
+          font-weight:700;
+          background:linear-gradient(90deg,#e8730c,#f5a524,#d94a3d);
+          -webkit-background-clip:text;
+          background-clip:text;
+          color:transparent;
+          letter-spacing:-.5px;
+        }
+        .hero p{
+          margin:0;
+          color:var(--muted);
+          font-size:.98rem;
+        }
+
+        /* ---------- Panel ---------- */
+        .panel{
+          background:var(--card);
+          border:1px solid var(--line);
+          border-radius:var(--radius);
+          box-shadow:var(--shadow);
+          padding:30px 20px;
+          max-width: 500px;
+          margin: 0 auto;
+          text-align: center;
+        }
+
+        /* ---------- Buttons ---------- */
+        .btn{
+          font-family:inherit;
+          font-size:.95rem;
+          font-weight:500;
+          border-radius:14px;
+          padding:12px 20px;
+          border:1.5px solid transparent;
+          cursor:pointer;
+          transition:transform .12s, box-shadow .18s, background .18s, color .18s;
+          white-space:nowrap;
+        }
+        .btn:active{ transform:scale(.97); }
+
+        .btn-primary{
+          background:linear-gradient(135deg,var(--brand),var(--brand-2));
+          color:#fff;
+          box-shadow:0 6px 16px rgba(232,115,12,.28);
+          display: block;
+          width: 100%;
+          padding: 16px;
+          font-size: 1.1rem;
+          font-weight: bold;
+          text-decoration: none;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+        .btn-primary:hover{ box-shadow:0 8px 22px rgba(232,115,12,.38); }
+
+        /* استایل اختصاصی برای آیکون و راهنما */
+        .app-icon-placeholder {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            animation: rise .5s ease both;
+        }
+        
+        .app-info {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+
+        .note {
+            font-size: 0.85rem;
+            color: #8a4a08;
+            background: #fff3e6;
+            border: 1px solid #f6d5b3;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: right;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>در حال دانلود اپلیکیشن...</h1>
-        <p>اگر دانلود به صورت خودکار شروع نشد، روی دکمه زیر بزنید:</p>
-        
-        <!-- دکمه دانلود با نام فایل شما -->
-        <a href="with_one.APK" id="downloadBtn" class="btn" download>دانلود دستی APK</a>
-        
-        <div class="note">
-            <strong>راهنمای نصب:</strong><br>
-            پس از دانلود، روی فایل کلیک کنید. اگر گوشی پیام «نصب از منابع ناشناس» داد، گزینه «اجازه دادن» یا «تنظیمات» را بزنید و اجازه نصب بدهید.
+
+    <div class="app">
+        <!-- بخش عنوان -->
+        <header class="hero">
+            <h1>دانلود اپلیکیشن</h1>
+            <p>برای استفاده از خدمات، آخرین نسخه را نصب کنید</p>
+        </header>
+
+        <!-- باکس اصلی دانلود -->
+        <div class="panel">
+            <div class="app-icon-placeholder">👨‍🍳</div>
+            <h2 style="margin-top: 0; font-size: 1.3rem; color: var(--ink);">نسخه اندروید</h2>
+            <div class="app-info">حجم فایل: ۹.۵ مگابایت</div>
+            
+            <!-- دکمه دانلود دستی -->
+            <!-- نکته: نام فایل APK دقیقاً باید با اینجا یکی باشد -->
+            <a href="with_one.APK" download class="btn btn-primary">
+                دانلود و نصب برنامه
+            </a>
+
+            <!-- راهنمای نصب -->
+            <div class="note">
+                <strong>راهنمای نصب:</strong><br>
+                پس از دانلود، روی فایل کلیک کنید. اگر گوشی پیام «نصب از منابع ناشناس» داد، گزینه «تنظیمات» را بزنید و به مرورگر خود اجازه نصب بدهید تا فرآیند نصب کامل شود.
+            </div>
         </div>
     </div>
 
-    <script>
-        // کد جاوااسکریپت برای شروع دانلود خودکار
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('downloadBtn').click();
-            }, 500); // نیم ثانیه بعد از باز شدن سایت، دانلود رو استارت بزن
-        });
-    </script>
 </body>
 </html>
